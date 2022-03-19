@@ -1,0 +1,45 @@
+# OS X
+images/
+log.txt
+.DS_Store*
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+*~
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# npm
+node_modules
+package-lock.json
+yarn.lock
+*.log
+*.gz
+
+
+# Coveralls
+coverage
+
+# Benchmarking
+benchmarks/graphs
+
+# IDEA editor
+.idea
+
+# Local dev bundle
+local-dev/bundle.js
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+dbdata

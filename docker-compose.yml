@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  forus:
+    container_name: forus_api
+    image: forus
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      # network: host
+    depends_on: 
+      - mongodb
+    environment:
+      - NODE_ENV=production
+      - DB_URI=mongodb://mongodb:27017/forus
+    ports:
+      - 3000:3000
+    links: 
+      - mongodb
+
+  mongodb:
+    container_name: forus_mongodb
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    volumes: 
+     - ./dbdata:/data/db
+    environment: 
+      - MONGO_INITDB_DATABASE=forus
+
